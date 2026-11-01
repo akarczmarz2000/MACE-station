@@ -28,6 +28,15 @@
 
 /datum/preference_middleware/jobs/proc/set_job_to_profile(list/params, mob/user)
 	var/job_title = params["job"]
+
+	var/datum/job/selected_job = SSjob.get_job(job_title)
+
+	if(!selected_job)
+		return FALSE
+
+	if(params["profile"] != -1 && !server_job_whitelist_allowed(user.client, selected_job))
+		return FALSE
+
 	var/profile_slot = params["profile"]
 
 	if (!isnum(profile_slot) || profile_slot == -1)
@@ -145,7 +154,7 @@
 	var/list/data = list()
 
 	for (var/datum/job/job as anything in SSjob.all_occupations)
-		if (is_banned_from(user.client?.ckey, job.title))
+		if(is_banned_from(user.client?.ckey, job.title) || !server_job_whitelist_allowed(user.client, job))
 			data += job.title
 
 	return data

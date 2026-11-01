@@ -952,6 +952,9 @@ SUBSYSTEM_DEF(job)
  * * add_job_to_log - If TRUE, appends the job type to the log entry. If FALSE, does not. Set to FALSE when check is part of iterating over players for a specific job, set to TRUE when check is part of iterating over jobs for a specific player and you don't want extra log entry spam.
  */
 /datum/controller/subsystem/job/proc/check_job_eligibility(mob/dead/new_player/player, datum/job/possible_job, debug_prefix = "", add_job_to_log = FALSE)
+	if(!server_job_whitelist_allowed(player?.client, possible_job))
+		return JOB_UNAVAILABLE_GENERIC
+
 	if(!player.mind)
 		job_debug("[debug_prefix]: Player has no mind, Player: [player][add_job_to_log ? ", Job: [possible_job]" : ""]")
 		return JOB_UNAVAILABLE_GENERIC

@@ -409,6 +409,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if (!job)
 		return FALSE
 
+	if(!isnull(level) && !server_job_whitelist_allowed(parent, job))
+		return FALSE
+
 	if (level == JP_HIGH)
 		var/datum/job/overflow_role = SSjob.overflow_role
 		var/overflow_role_title = initial(overflow_role.title)
