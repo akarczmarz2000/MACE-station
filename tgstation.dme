@@ -7219,5 +7219,8 @@
 #include "interface\fonts\spess_font.dm"
 #include "interface\fonts\tiny_unicode.dm"
 #include "interface\fonts\vcr_osd_mono.dm"
+#include "server_modules\cryo_out\cryo_out.dm"
+#include "server_modules\cryo_out\cryo_out_bed.dm"
+#include "server_modules\cryo_out\cryo_out_rejoin.dm"
 #include "server_modules\job_whitelist\job_whitelist.dm"
 // END_INCLUDE
