@@ -2,10 +2,13 @@
 {
   "Captain": ["ajokerxd", "lordvonsepheron"],
   "Head of Personnel": ["sparkykun", "kaytee", "lordvonsepheron"],
-  "Head of Security": ["sparkykun", "lordvonsepheron"],
+  "Research Director": ["malicidus", "lordvonsepheron"],
   "Chief Engineer": ["malicidus", "mikaelkhristov", "lordvonsepheron"],
-  "Research Director": ["lordvonsepheron"],
   "Chief Medical Officer": ["jinxie6", "mikaelkhristov", "lordvonsepheron"],
+  "Head of Security": ["sparkykun", "lordvonsepheron"],
+  "Quartermaster": ["lordvonsepheron"],
   "AI": ["timmylegit", "lordvonsepheron", "ajokerxd"],
-  "Cyborg": ["sparkykun", "lordvonsepheron"]
+  "Cyborg": ["sparkykun", "lordvonsepheron"],
+  "Clown": ["lordvonsepheron"],
+  "Mime": ["lordvonsepheron"]
 }
